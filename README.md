@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+Projeto feito para treinar com base nos exercícios da aula Angular 9 + Spring Boot 2.2: Fullstack Completo e Atualizado 
+link: https://www.udemy.com/course/full-stack-angular9-spring-boot/
+
+Baseado no template SbAdmin: https://startbootstrap.github.io/startbootstrap-sb-admin/layout-static.html#!
