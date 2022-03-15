@@ -1,1 +1,44 @@
-<p>curso-form works!</p>
+<h1 class="mt-4">Curso</h1>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">Novo</li>
+</ol>
+<div class="container">
+  <form #form="ngForm" (submit)="onSubmit()">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-success" role="alert" *ngIf="success == true">
+          Curso salvo com sucesso!
+        </div>
+        <div class="alert alert-danger" role="alert" *ngFor="let error of errors">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Nome: </label>
+            <input class="form-control"
+            [(ngModel)]="curso.nome" type="text"
+            name="nome" id="inputNome">
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-success">
+          <i class="fa fa-save"></i>
+          Salvar
+        </button>
+
+        <button type="button" routerLink="/servicos-prestados/lista"
+          class="btn btn-danger ml-1">
+          <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

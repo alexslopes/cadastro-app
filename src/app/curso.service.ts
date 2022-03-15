@@ -17,7 +17,7 @@ export class CursoService {
    }
 
    salvar(curso: Curso) : Observable<Curso> {
-     return this.http.post<Curso>(this.apiURL, Curso);
+     return this.http.post<Curso>(this.apiURL, curso);
    }
 
   buscar(nome: string, mes: number): Observable<CursoBusca[]> {
