@@ -9,6 +9,7 @@ import { TemplateModule } from './template/template.module';
 import { AlunoModule } from './aluno/aluno.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { CursoModule } from './curso/curso.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserModule,
     TemplateModule,
     AppRoutingModule,
-    AlunoModule
+    AlunoModule,
+    CursoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
