@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CursoService } from 'src/app/curso.service';
+import { CursoBusca } from './cursoBusca';
 
 @Component({
   selector: 'app-curso-lista',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursoListaComponent implements OnInit {
 
-  constructor() { }
+  nome: string;
+  mes: number;
+  meses: number[];
+  lista: CursoBusca[];
+  message: string;
+  constructor(
+    private service: CursoService
+  ) {
+    this.meses = [1,2,3,4,5,6,7,8,9,10,11,12];
+   }
 
   ngOnInit(): void {
+  }
+
+  consultar() {
+    this.service.buscar(this.nome, this.mes)
+      .subscribe(response => {
+        this.lista = response;
+        if( this.lista.length <= 0 ){
+          this.message = "Nenhum Registro encontrado.";
+          } else {
+            this.message = null;
+          }
+        });
   }
 
 }

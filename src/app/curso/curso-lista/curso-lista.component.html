@@ -1,1 +1,56 @@
-<p>curso-lista works!</p>
+<h1 class="mt-4">Cursos</h1>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">Consulta</li>
+</ol>
+<div class="container">
+  <form #consultaForm="ngForm" (submit)="consultar()">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="inputNome">Nome do Curso:</label>
+        <!-- Quando usar NgModel sempre usar a propriedade name -->
+        <input type="text" [(ngModel)]="nome"
+                name="nome" class="form-control"
+                id="inputNome">
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-search"></i> Consultar
+        </button>
+
+        <button type="button"
+          routerLink="/curso/form"
+          class="btn btn-warning ml-1">
+          <i class="fa fa-plus"></i> Novo
+        </button>
+      </div>
+    </div>
+  </form>
+  <br/>
+  <div class="row">
+    <div class="alert alert-warning" role="alert" *ngIf="message">
+      {{ message }}
+    </div>
+    <div class="col-md-12">
+      <table class="table">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Descriçao</th>
+              <th>Valor</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr *ngFor="let s of lista">
+               <td>{{ s.nome }}</td>
+             </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>

@@ -6,10 +6,10 @@ import { CursoListaComponent } from './curso-lista/curso-lista.component';
 
 
 const routes: Routes = [
-  { path: 'cursos', component: LayoutComponent, children: [
+  { path: 'curso', component: LayoutComponent, children: [
     { path: 'form', component: CursoFormComponent },
     { path: 'lista', component: CursoListaComponent},
-    { path: '', redirectTo: '/cursos/lista', pathMatch: 'full'}
+    { path: '', redirectTo: '/curso/lista', pathMatch: 'full'}
   ]}
 ];
 
