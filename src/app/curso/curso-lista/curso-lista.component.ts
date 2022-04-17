@@ -21,10 +21,15 @@ export class CursoListaComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.listar("");
   }
 
   consultar() {
-    this.service.buscar(this.nome, this.mes)
+    this.listar(this.nome);
+  }
+
+  private listar(nome: string) {
+    this.service.buscar(nome)
       .subscribe(response => {
         this.lista = response;
         if( this.lista.length <= 0 ){
@@ -34,5 +39,6 @@ export class CursoListaComponent implements OnInit {
           }
         });
   }
+
 
 }

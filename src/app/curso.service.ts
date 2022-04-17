@@ -20,7 +20,7 @@ export class CursoService {
      return this.http.post<Curso>(this.apiURL, curso);
    }
 
-  buscar(nome: string, mes: number): Observable<CursoBusca[]> {
+  buscar(nome: string): Observable<CursoBusca[]> {
     const httpParams = new HttpParams()
       .set("nome", nome);
 
