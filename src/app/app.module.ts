@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     FormsModule,
+    FormsModule,
     HttpClientModule,
     BrowserModule,
     TemplateModule,
