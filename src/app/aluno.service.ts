@@ -14,12 +14,7 @@ export class AlunoService {
   constructor(private http: HttpClient) { }
 
   salvar(aluno: Aluno) : Observable<Aluno> {
-    const tokenString = localStorage.getItem('access_token');
-    const token = JSON.parse(tokenString);
-    const headers = {
-      'Authorization' : 'Bearer' + ' ' +  token.access_token
-    }
-    return this.http.post<Aluno>(`${this.apiURL}`,aluno, { headers });
+    return this.http.post<Aluno>(`${this.apiURL}`, aluno);
   }
 
   atualizar(aluno: Aluno) : Observable<any> {
@@ -27,12 +22,7 @@ export class AlunoService {
   }
 
   getAlunos() : Observable<Aluno[]> {
-    const tokenString = localStorage.getItem('access_token');
-    const token = JSON.parse(tokenString);
-    const headers = {
-      'Authorization' : 'Bearer' + ' ' +  token.access_token
-    }
-    return this.http.get<Aluno[]>(this.apiURL, { headers });
+    return this.http.get<Aluno[]>(this.apiURL);
   }
 
   getAlunoById(id: number) : Observable<Aluno> {
